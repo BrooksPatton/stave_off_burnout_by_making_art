@@ -1,11 +1,15 @@
-class RandomWalk {
+class RandomWalk extends Walker {
   constructor(location) {
-    this.location = location;
+    super();
+
     this.size = 1;
+    this.isDead = false;
+    this.location = location;
     this.isDead = false;
   }
 
   draw() {
+    stroke(this.red, this.green, this.blue);
     point(this.location.x, this.location.y);
   }
 
@@ -32,5 +36,7 @@ class RandomWalk {
     } else if(this.location.y > height) {
       this.isDead = true;
     }
+
+    this.updateColor();
   }
 }

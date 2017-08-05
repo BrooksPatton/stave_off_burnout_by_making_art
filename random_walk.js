@@ -2,7 +2,7 @@ const walkers = [];
 
 function setup() {
   createCanvas(900, 700);
-  const numWalkers = 500;
+  const numWalkers = 1500;
   for(let i = 0; i < numWalkers; i++) {
     createRandomWalker();
   }
@@ -14,7 +14,7 @@ function draw() {
     walker.update();
     if(walker.isDead) {
       walkers.splice(i, 1);
-      console.info('walker died');
+      //console.info('walker died');
     }
   });
 }
